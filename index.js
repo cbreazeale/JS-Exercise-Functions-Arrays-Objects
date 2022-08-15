@@ -59,9 +59,9 @@ function sayGoodbye(name) {
 function temperatureCtoF(temperatureInC) {
   /* code here */
   let temperatureInF  = (temperatureInC * 9/5 + 32)
-  return console.log(Math.round(temperatureInF))
+  return (Math.round(temperatureInF))
 }
-// temperatureCtoF(24)
+// console.log(temperatureCtoF(24))
 
 /**
  * ### Challenge `temperatureInF`
@@ -80,10 +80,13 @@ function temperatureCtoF(temperatureInC) {
  *
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
+function temperatureInF(temp, unit) {
   /* code here */
+  let newTemp = temperatureCtoF(temp).toString()
+  if(unit === 'C') return (newTemp +'F')
+  return console.log(temp + 'F')
 }
-
+// console.log(temperatureInF(24, 'C'))
 
 /**
  * ### Challenge `makePersonObject`
