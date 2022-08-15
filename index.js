@@ -87,6 +87,8 @@ function temperatureInF(temp, unit) {
   return console.log(temp + 'F')
 }
 // console.log(temperatureInF(24, 'C'))
+// console.log(temperatureInF(23, 'F'))
+
 
 /**
  * ### Challenge `makePersonObject`
@@ -104,9 +106,16 @@ function temperatureInF(temp, unit) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
+function makePersonObject(id, name, email) {
   /* code here */
+  const obj = {}
+  if(!obj['id'] || !obj['name'] || !obj['email']){
+    obj['id'] = id, obj['name'] = name, obj['email'] = email
+  }
+  return obj
 }
+
+// console.log(makePersonObject(5, 'Leia', 'leia@leia.com'))
 
 /**
  * ### Challenge `getName`
