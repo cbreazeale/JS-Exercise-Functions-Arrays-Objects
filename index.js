@@ -1,5 +1,5 @@
+// const inventory2 = require('./data/inventory.js');
 // ⭐️ Example Challenge start ⭐️
-
 /**
  * ### Challenge `addNumbers`
  *
@@ -209,6 +209,7 @@ var inventory = [
   { id: 14, car_make: "Dodge", car_model: "Ram Van 1500", car_year: 1999 }
 ]
 
+
 /**
   * ### Example Array Challenge:
   *
@@ -300,9 +301,13 @@ function getModelYears(inventory) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
+function getCarInfoById(inventory, value) {
   /* code here */
+  for(let i=0; i<inventory.length; i++){
+    if(inventory[i].id === value) return `This is a ${inventory[i].car_make} ${inventory[i].car_model}.`
+  }
 }
+// console.log(getCarInfoById(inventory, 8))
 
 /**
  * ### Challenge `getOlderCars`
@@ -318,9 +323,15 @@ function getCarInfoById(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
+function getOlderCars(inventory, maxYear) {
   /* code here */
+  const newArr = [];
+  for(let i=0; i<inventory.length; i++){
+    if(inventory[i].car_year <= maxYear) newArr.push(inventory[i])
+  }
+  return newArr
 }
+// console.log(getOlderCars (inventory, 2000))
 
 /**
  * ### Challenge `getGermanCars`
@@ -335,10 +346,17 @@ function getOlderCars(/* code here */) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
+function getGermanCars(inventory) {
   /* code here */
+  germanCars = [];
+  for(let i=0; i<inventory.length; i++){
+    if(inventory[i].car_make === 'Audi'|| inventory[i].car_make === 'Mercedes-Benz'|| inventory[i].car_make === 'Volkswagen'|| inventory[i].car_make === 'BMW'){
+      germanCars.push(inventory[i])
+    }
+  }
+  return germanCars
 }
-
+// console.log(getGermanCars(inventory))
 /**
  * ### Challenge `carMaker`
  * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
